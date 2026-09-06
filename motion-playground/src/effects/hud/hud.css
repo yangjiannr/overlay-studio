@@ -809,7 +809,7 @@
   top: 0;
   bottom: 0;
   background: color-mix(in srgb, var(--cbar-prog, var(--hud-acc)) var(--cbar-alpha, 25%), transparent);
-  transition: width 300ms linear;
+  /* 进度跟时间轴每帧改 width —— 不能加 transition,否则播放时一直重启动画、看起来卡住,暂停才追上 */
 }
 /* 进度前沿一道亮边:让"往前走"看得出方向 */
 .cbar-fill::after {
@@ -829,7 +829,7 @@
   bottom: 0;
   height: 4px;
   background: var(--hud-acc);
-  transition: width 300ms linear;
+  /* 同 .cbar-fill:跟时间轴实时走,不加 width 过渡 */
 }
 /* 导出:实底,保证叠进剪映清晰 */
 .export-mode .cbar {
